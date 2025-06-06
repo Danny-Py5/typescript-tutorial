@@ -1,0 +1,2 @@
+a = 'daniel'
+a.lower()
