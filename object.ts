@@ -51,4 +51,37 @@ let newUser: User = {
 newUser.name = "gloria";
 // newUser._id = newUser._id + "changed"; // error, can't change a readonly property
 
+// there may be some cases where a new type is the combination of existing type(s) + it own new property(s) type
+type Male = {
+  name: string;
+  height: number;
+  age: number;
+  hasDeepVoice?: boolean;
+};
+type Quality = {
+  isBeautiful: boolean;
+  canDance: boolean;
+  isAttractive: boolean;
+};
+// type female will have name, height, age, hasDeepVoice, isBeautiful, canDance, isAttractive and it own set properties
+type Female = Male &
+  Quality & {
+    hasThinVoice?: boolean;
+    hasBoyFriend: boolean;
+    boyFriendName: string;
+  };
+
+const newFemale: Female = {
+  name: "Gloria",
+  height: 44,
+  age: 18,
+  hasDeepVoice: false, // might not have this property - Optional
+  hasThinVoice: true,
+  isBeautiful: true,
+  canDance: true,
+  isAttractive: true,
+  hasBoyFriend: true,
+  boyFriendName: "Daniel Olatunde",
+};
+
 export {};
