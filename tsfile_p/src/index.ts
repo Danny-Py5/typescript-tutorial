@@ -1,3 +1,5 @@
+// private, static, public are access modifyers
+
 class User {
   private static _allUsers = 0; // shared props to all instances
   constructor(

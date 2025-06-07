@@ -1,4 +1,5 @@
 "use strict";
+// private, static, public are access modifyers
 class User {
     constructor(name, email, id) {
         this.name = name;
